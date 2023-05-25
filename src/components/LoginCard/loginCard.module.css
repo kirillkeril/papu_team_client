@@ -37,3 +37,6 @@
     color: #007A4F;
     font-weight: 400;
 }
+.registerLink:hover {
+    cursor: pointer;
+}

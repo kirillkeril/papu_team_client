@@ -9,26 +9,27 @@ import { Button } from "../UIKit/Button/Button";
 export const LoginCard = (params) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [userName, setuserName] = useState("");
+  const [userName, setUserName] = useState("");
   const [passwordAffirm, setPasswordAffrm] = useState("");
   const { store } = useContext(Context);
-  const [isAuth, setAuth] = useState(false);
+  const [isAuth, setAuth] = useState(true);
 
-    function handleEmail(e) {
-        setEmail(e.target.value);
+  function handleEmail(e) {
+      setEmail(e.target.value);
+  }
+  function handlePassword(e) {
+      setPassword(e.target.value);
+  }
+  async function register(e) {
+    e.preventDefault();
+    try {
+      const res = await UserService.register(email, password);
+      store.setUser(res.data.user);
+      console.log(store.user)
+    } catch (e) {
+      console.log(e);
     }
-    function handlePassword(e) {
-        setPassword(e.target.value);
-    }
-    async function register(e) {
-        e.preventDefault();
-        try {
-            const res = await UserService.register(email, password);
-            store.setUser(res.data.user);
-            console.log(store.user)
-        } catch (e) {
-            console.log(e);
-        }
+  }
   //Валидация мэйла
   function ValidMail(email) {
     var re = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
@@ -45,11 +46,15 @@ export const LoginCard = (params) => {
 
   //Сравнение паролей
   function comparePass(password, passAffirm) {
-    if (password == passAffirm) {
-      if (password != "") return true;
+    if (password === passAffirm) {
+      if (password !==   "") return true;
     } else {
       return false;
     }
+  }
+
+  function changeAuth(bool) {
+    setAuth(bool);
   }
 
   function handleEmail(e) {
@@ -59,8 +64,8 @@ export const LoginCard = (params) => {
     setPassword(e.target.value);
   }
 
-  function handleuserName(e) {
-    setuserName(e.target.value);
+  function handleUserName(e) {
+    setUserName(e.target.value);
   }
   function handlePasswordAffirm(e) {
     setPasswordAffrm(e.target.value);
@@ -115,7 +120,7 @@ export const LoginCard = (params) => {
         <footer className={styles.footer}>
           <span>
             Нет аккаунта?{" "}
-            <span className={styles.registerLink}>Загеристрируйтесь</span>
+            <span className={styles.registerLink} onClick={() => changeAuth(false)}>Загеристрируйтесь</span>
           </span>
         </footer>
       </div>
@@ -133,7 +138,7 @@ export const LoginCard = (params) => {
               name={"userName"}
               type={"userName"}
               value={userName}
-              onChange={handleuserName}
+              onChange={handleUserName}
               placeholder={"Как вас зовут?"}
             />
             <Input
@@ -164,12 +169,17 @@ export const LoginCard = (params) => {
         </div>
 
         <footer className={styles.footer}>
-          <span>
-            Уже есть аккаунт? <span className={styles.registerLink}>Войти</span>
-          </span>
+          <p>
+            Уже есть аккаунт?
+            <label
+                className={styles.registerLink}
+                onClick={() => changeAuth(true)}
+            >
+              Войти
+            </label>
+          </p>
         </footer>
       </div>
     );
   }
-}
 };
