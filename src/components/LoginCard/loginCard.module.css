@@ -28,3 +28,12 @@
     align-items: center;
     padding: 32px 0;
 }
+.footer {
+    margin-top: 115px;
+    font-family: "Open Sans";
+    color: #A7A7A7;
+}
+.registerLink {
+    color: #007A4F;
+    font-weight: 300;
+}

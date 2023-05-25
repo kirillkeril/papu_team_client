@@ -45,14 +45,14 @@ export const LoginCard = (params) => {
             <div className={styles.formContainer}>
                 <span className={styles.span}>Войдите в аккаунт</span>
                 <form className={styles.registerForm}>
-                    <Input  style={{marginBottom: '24px'}} name={'email'} type={'email'} value={email} onChange={handleEmail}/>
-                    <Input name={'password'} type={'password'} value={password} onChange={handlePassword}/>
+                    <Input placeholder={'Электронная почта'} style={{marginBottom: '24px'}} name={'email'} type={'email'} value={email} onChange={handleEmail}/>
+                    <Input placeholder={'Пароль'} name={'password'} type={'password'} value={password} onChange={handlePassword}/>
                 </form>
                 <Button onClick={login}>login</Button>
             </div>
 
-            <footer>
-
+            <footer className={styles.footer}>
+                <span>Нет аккаунта? <span className={styles.registerLink}>Загеристрируйтесь</span></span>
             </footer>
         </div>
     );
