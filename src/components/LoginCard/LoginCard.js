@@ -1,5 +1,5 @@
 import {Image} from "../UIKit/Image/Image";
-import styles from './registerCard.module.css';
+import styles from './loginCard.module.css';
 import {useContext, useState} from "react";
 import {Context} from "../../index";
 import UserService from "../../services/user.service";
@@ -45,10 +45,10 @@ export const LoginCard = (params) => {
             <div className={styles.formContainer}>
                 <span className={styles.span}>Войдите в аккаунт</span>
                 <form className={styles.registerForm}>
-                    <Input style={{marginBottom: '44px'}} name={'email'} type={'email'} value={email} onChange={handleEmail}/>
+                    <Input  style={{marginBottom: '24px'}} name={'email'} type={'email'} value={email} onChange={handleEmail}/>
                     <Input name={'password'} type={'password'} value={password} onChange={handlePassword}/>
-                    <Button onClick={login}>login</Button>
                 </form>
+                <Button onClick={login}>login</Button>
             </div>
 
             <footer>
