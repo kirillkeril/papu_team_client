@@ -22,40 +22,15 @@ export const LoginCard = (params) => {
     setPassword(e.target.value);
   }
 
-  function setRed(formID) {
-    let page = document.querySelector(formID);
-    page.classList.add("setRed");
-    // console.log(nameInp.current);
-  }
-  function reset(formID) {
-    let page = document.querySelector(formID);
-    page.classList.remove("setRed");
-  }
-
   async function register(e) {
     e.preventDefault();
 
-    if (validName(userName)) {
-      reset("#userName");
-      if (validMail(email)) {
-        reset("#email");
-        if (validPass(password, passwordAffirm)) {
-          reset("#password");
-          try {
-            const res = await UserService.register(email, password);
-            store.setUser(res.data.user);
-            console.log(store.user);
-          } catch (e) {
-            console.log(e);
-          }
-        } else {
-          setRed("#password");
-        }
-      } else {
-        setRed("#email");
-      }
-    } else {
-      setRed("#userName");
+    try {
+      const res = await UserService.register(email, password);
+      store.setUser(res.data.user);
+      console.log(store.user);
+    } catch (e) {
+      console.log(e);
     }
   }
 
@@ -166,15 +141,14 @@ export const LoginCard = (params) => {
               id={"userName"}
               value={userName}
               onChange={(e) => {
-                  handleUserName(e);
-                  const isValid = validName(e.target.value);
-                  if (isValid) {
-                    e.target.classList.remove('setRed');
-                  } else {
-                    e.target.classList.add('setRed');
-                  }
+                handleUserName(e);
+                const isValid = validName(e.target.value);
+                if (isValid) {
+                  e.target.classList.remove("setRed");
+                } else {
+                  e.target.classList.add("setRed");
                 }
-              }
+              }}
               placeholder={"Как вас зовут?"}
             />
             <Input
@@ -184,15 +158,14 @@ export const LoginCard = (params) => {
               id={"email"}
               value={email}
               onChange={(e) => {
-                  handleEmail(e);
-                  const isValid = validMail(e.target.value);
-                  if (isValid) {
-                    e.target.classList.remove('setRed');
-                  } else {
-                    e.target.classList.add('setRed');
-                  }
+                handleEmail(e);
+                const isValid = validMail(e.target.value);
+                if (isValid) {
+                  e.target.classList.remove("setRed");
+                } else {
+                  e.target.classList.add("setRed");
                 }
-              }
+              }}
               placeholder={"Электронная почта"}
             />
             <Input
@@ -202,9 +175,8 @@ export const LoginCard = (params) => {
               type={"password"}
               value={password}
               onChange={(e) => {
-                  handlePassword(e)
-                }
-              }
+                handlePassword(e);
+              }}
               placeholder={"Пароль"}
             />
             <Input
@@ -215,11 +187,11 @@ export const LoginCard = (params) => {
               onChange={(e) => {
                 handlePasswordAffirm(e);
                 const isValid = validPass(password, e.target.value);
-                console.log(e.target.value, password)
+                console.log(e.target.value, password);
                 if (isValid) {
-                  e.target.classList.remove('setRed');
+                  e.target.classList.remove("setRed");
                 } else {
-                  e.target.classList.add('setRed');
+                  e.target.classList.add("setRed");
                 }
               }}
               placeholder={"Повторите пароль"}
