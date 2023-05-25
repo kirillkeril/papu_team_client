@@ -10,5 +10,5 @@
     height: 100%;
 }
 .setRed {
-    border-color: red;
+    border-color: red !important;
 }
