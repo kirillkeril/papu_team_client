@@ -13,7 +13,6 @@ export const LoginCard = (params) => {
   const [passwordAffirm, setPasswordAffrm] = useState("");
   const { store } = useContext(Context);
   const [isAuth, setAuth] = useState(true);
-  const [agreement, setAgreement] = useState(false);
   function handleEmail(e) {
     setEmail(e.target.value);
   }
@@ -23,7 +22,7 @@ export const LoginCard = (params) => {
   async function register(e) {
     e.preventDefault();
     try {
-      if (validName() && ValidMail() && !agreement) {
+      if (validName() && ValidMail()) {
         const res = await UserService.register(email, password);
         store.setUser(res.data.user);
         console.log(store.user);
@@ -71,16 +70,6 @@ export const LoginCard = (params) => {
   }
   function handlePasswordAffirm(e) {
     setPasswordAffrm(e.target.value);
-  }
-  async function register(e) {
-    e.preventDefault();
-    try {
-      const res = await UserService.register(email, password);
-      store.setUser(res.data.user);
-      console.log(store.user);
-    } catch (e) {
-      console.log(e);
-    }
   }
   async function login(e) {
     e.preventDefault();
@@ -180,7 +169,7 @@ export const LoginCard = (params) => {
 
         <footer style={{ marginTop: "33px" }} className={styles.footer}>
           <p>
-            Уже есть аккаунт?
+            Уже есть аккаунт?{' '}
             <label
               className={styles.registerLink}
               onClick={() => changeAuth(true)}

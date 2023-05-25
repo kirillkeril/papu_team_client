@@ -5,7 +5,7 @@ export const LandingPage = () => {
         <div className={styles.page}>
             <Header/>
             <main>
-                
+
             </main>
         </div>
     );
