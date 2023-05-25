@@ -1,7 +1,9 @@
 import styles from './header.module.css';
 import {Button} from "../UIKit/Button/Button";
 import {Image} from "../UIKit/Image/Image";
+import {useNavigate} from "react-router-dom";
 export const Header = () => {
+    const navigate = useNavigate();
     return (
         <header className={styles.mainContainer}>
             <Image width={'250px'} src={'./source/logo.svg'} />
@@ -13,7 +15,7 @@ export const Header = () => {
                 <div className={styles.menuItem}>Контакты</div>
             </menu>
             <div className={styles.buttonsContainer}>
-                <Button>Вход</Button>
+                <Button onClick={() => navigate('/login')}>Вход</Button>
             </div>
         </header>
     );

@@ -9,3 +9,6 @@
 .App {
     height: 100%;
 }
+.setRed {
+    border-color: red;
+}
