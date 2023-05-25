@@ -1,6 +1,6 @@
 import styles from './button.module.css';
-export const Button = ({children, onClick}) => {
+export const Button = (params) => {
     return (
-        <div className={styles.button} role={"button"}>{children}</div>
+        <div className={styles.button} role={"button"} {...params}>{params.children}</div>
     );
 }

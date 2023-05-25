@@ -13,7 +13,7 @@ export const LoginCard = (params) => {
   const [passwordAffirm, setPasswordAffrm] = useState("");
   const { store } = useContext(Context);
   const [isAuth, setAuth] = useState(true);
-
+  const [agreement, setAgreement] = useState(false);
   function handleEmail(e) {
       setEmail(e.target.value);
   }
@@ -23,9 +23,11 @@ export const LoginCard = (params) => {
   async function register(e) {
     e.preventDefault();
     try {
-      const res = await UserService.register(email, password);
-      store.setUser(res.data.user);
-      console.log(store.user)
+      if(validName() && ValidMail() && !agreement) {
+        const res = await UserService.register(email, password);
+        store.setUser(res.data.user);
+        console.log(store.user)
+      }
     } catch (e) {
       console.log(e);
     }
@@ -167,14 +169,14 @@ export const LoginCard = (params) => {
           </form>
           <Button onClick={register}>Регистрация</Button>
           <div className={styles.agreeDiv}>
-            <input type="checkbox" id="agreement" name="agreement" />
+            <input type="checkbox" id="agreement" name="agreement" checked={agreement} onClick={(e) => setAgreement(e.target.checked)}/>
             <label for="agreement" className={styles.agreement}>
               Даю согласие на обработку персональных данных
             </label>
           </div>
         </div>
 
-        <footer className={styles.footer}>
+        <footer style={{marginTop: '33px'}} className={styles.footer}>
           <p>
             Уже есть аккаунт?
             <label
