@@ -170,7 +170,7 @@ export const LoginCard = (params) => {
 
         <footer style={{ marginTop: "33px" }} className={styles.footer}>
           <p>
-            Уже есть аккаунт?{' '}
+            Уже есть аккаунт?{" "}
             <label
               className={styles.registerLink}
               onClick={() => changeAuth(true)}
