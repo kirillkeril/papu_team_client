@@ -23,7 +23,7 @@ export default class Store {
             console.log(e.response?.data?.message);
         }
     }
-    async login(email, password) {
+    async register(email, password) {
         try {
             const user = await UserService.register(email, password);
             localStorage.setItem('token', user.data.accessToken);
