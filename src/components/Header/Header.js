@@ -13,7 +13,7 @@ export const Header = () => {
                 <div className={styles.menuItem}>Контакты</div>
             </menu>
             <div className={styles.buttonsContainer}>
-                <Button>BUTTON</Button>
+                <Button>Вход</Button>
             </div>
         </header>
     );
