@@ -15,18 +15,18 @@ export const LoginCard = (params) => {
   const [isAuth, setAuth] = useState(true);
   const [agreement, setAgreement] = useState(false);
   function handleEmail(e) {
-      setEmail(e.target.value);
+    setEmail(e.target.value);
   }
   function handlePassword(e) {
-      setPassword(e.target.value);
+    setPassword(e.target.value);
   }
   async function register(e) {
     e.preventDefault();
     try {
-      if(validName() && ValidMail() && !agreement) {
+      if (validName() && ValidMail() && !agreement) {
         const res = await UserService.register(email, password);
         store.setUser(res.data.user);
-        console.log(store.user)
+        console.log(store.user);
       }
     } catch (e) {
       console.log(e);
@@ -49,7 +49,7 @@ export const LoginCard = (params) => {
   //Сравнение паролей
   function comparePass(password, passAffirm) {
     if (password === passAffirm) {
-      if (password !==   "") return true;
+      if (password !== "") return true;
     } else {
       return false;
     }
@@ -122,7 +122,12 @@ export const LoginCard = (params) => {
         <footer className={styles.footer}>
           <span>
             Нет аккаунта?{" "}
-            <span className={styles.registerLink} onClick={() => changeAuth(false)}>Загеристрируйтесь</span>
+            <span
+              className={styles.registerLink}
+              onClick={() => changeAuth(false)}
+            >
+              Загеристрируйтесь
+            </span>
           </span>
         </footer>
       </div>
@@ -168,20 +173,17 @@ export const LoginCard = (params) => {
             />
           </form>
           <Button onClick={register}>Регистрация</Button>
-          <div className={styles.agreeDiv}>
-            <input type="checkbox" id="agreement" name="agreement" checked={agreement} onClick={(e) => setAgreement(e.target.checked)}/>
-            <label for="agreement" className={styles.agreement}>
-              Даю согласие на обработку персональных данных
-            </label>
-          </div>
+          <span className={styles.agreement}>
+            Регистрируясь, вы соглашаетесь на обработку персональных данных
+          </span>
         </div>
 
-        <footer style={{marginTop: '33px'}} className={styles.footer}>
+        <footer style={{ marginTop: "33px" }} className={styles.footer}>
           <p>
             Уже есть аккаунт?
             <label
-                className={styles.registerLink}
-                onClick={() => changeAuth(true)}
+              className={styles.registerLink}
+              onClick={() => changeAuth(true)}
             >
               Войти
             </label>
