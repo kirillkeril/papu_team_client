@@ -23,7 +23,7 @@ export const LoginCard = (params) => {
   function handleuserName(e) {
     setuserName(e.target.value);
   }
-  function handlePassworAffirm(e) {
+  function handlePasswordAffirm(e) {
     setPasswordAffrm(e.target.value);
   }
 
@@ -111,7 +111,7 @@ export const LoginCard = (params) => {
               name={"password"}
               type={"password"}
               value={passwordAffirm}
-              onChange={handlePassword}
+              onChange={handlePasswordAffirm}
               placeholder={"Повторите пароль"}
             />
             <Button onClick={register}>Регистрация</Button>
