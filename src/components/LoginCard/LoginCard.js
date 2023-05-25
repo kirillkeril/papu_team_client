@@ -146,6 +146,12 @@ export const LoginCard = (params) => {
             />
           </form>
           <Button onClick={register}>Регистрация</Button>
+          <div className={styles.agreeDiv}>
+            <input type="checkbox" id="agreement" name="agreement" />
+            <label for="agreement" className={styles.agreement}>
+              Даю согласие на обработку персональных данных
+            </label>
+          </div>
         </div>
 
         <footer className={styles.footer}>

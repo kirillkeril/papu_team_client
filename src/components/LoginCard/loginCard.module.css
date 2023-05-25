@@ -37,3 +37,11 @@
     color: #007A4F;
     font-weight: 300;
 }
+.agreement{
+    font-family: "Open Sans";
+    color: #A7A7A7;
+    font-size: 14px;
+}
+.agreeDiv{
+    margin-top: 24px;
+}
