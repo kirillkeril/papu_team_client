@@ -1,10 +1,10 @@
 
-import {RegisterCard} from "../components/RegisterCard/RegisterCard";
+import {LoginCard} from "../components/LoginCard/LoginCard";
 
 export const RegisterPage = () => {
     return (
         <>
-            <RegisterCard/>
+            <LoginCard/>
 
         </>
     );

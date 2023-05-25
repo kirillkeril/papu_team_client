@@ -4,8 +4,9 @@ import {useContext, useState} from "react";
 import {Context} from "../../index";
 import UserService from "../../services/user.service";
 import {Input} from "../UIKit/Input/Input";
+import {Button} from "../UIKit/Button/Button";
 
-export const RegisterCard = (params) => {
+export const LoginCard = (params) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const {store} = useContext(Context);
@@ -40,15 +41,18 @@ export const RegisterCard = (params) => {
     return (
         <div className={styles.registerCard}>
             <Image width={'250px'} src={'/source/logo.svg'}/>
+
             <div className={styles.formContainer}>
                 <span className={styles.span}>Войдите в аккаунт</span>
                 <form className={styles.registerForm}>
-                    <Input name={'email'} type={'email'} value={email} onChange={handleEmail}/>
+                    <Input style={{marginBottom: '44px'}} name={'email'} type={'email'} value={email} onChange={handleEmail}/>
                     <Input name={'password'} type={'password'} value={password} onChange={handlePassword}/>
-                    <button onClick={login}>login</button>
+                    <Button onClick={login}>login</Button>
                 </form>
             </div>
+
             <footer>
+
             </footer>
         </div>
     );
