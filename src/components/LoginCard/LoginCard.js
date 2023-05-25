@@ -17,7 +17,6 @@ export const LoginCard = (params) => {
     function handlePassword(e) {
         setPassword(e.target.value);
     }
-
     async function register(e) {
         e.preventDefault();
         try {
