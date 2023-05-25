@@ -3,6 +3,10 @@
     --buttonTextColor: #fff;
     --menuText: rgba(30,30,30,1);
 }
+html, body, * {
+    margin: 0;
+    padding: 0;
+}
 #root {
     height: 100vh;
 }

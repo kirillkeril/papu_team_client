@@ -165,7 +165,16 @@ export const LoginCard = (params) => {
               name={"userName"}
               id={"userName"}
               value={userName}
-              onChange={handleUserName}
+              onChange={(e) => {
+                  handleUserName(e);
+                  const isValid = validName(e.target.value);
+                  if (isValid) {
+                    e.target.classList.remove('setRed');
+                  } else {
+                    e.target.classList.add('setRed');
+                  }
+                }
+              }
               placeholder={"Как вас зовут?"}
             />
             <Input
@@ -174,7 +183,16 @@ export const LoginCard = (params) => {
               type={"email"}
               id={"email"}
               value={email}
-              onChange={handleEmail}
+              onChange={(e) => {
+                  handleEmail(e);
+                  const isValid = validMail(e.target.value);
+                  if (isValid) {
+                    e.target.classList.remove('setRed');
+                  } else {
+                    e.target.classList.add('setRed');
+                  }
+                }
+              }
               placeholder={"Электронная почта"}
             />
             <Input
@@ -183,7 +201,10 @@ export const LoginCard = (params) => {
               id={"password"}
               type={"password"}
               value={password}
-              onChange={handlePassword}
+              onChange={(e) => {
+                  handlePassword(e)
+                }
+              }
               placeholder={"Пароль"}
             />
             <Input
@@ -191,7 +212,16 @@ export const LoginCard = (params) => {
               type={"password"}
               id={"password"}
               value={passwordAffirm}
-              onChange={handlePasswordAffirm}
+              onChange={(e) => {
+                handlePasswordAffirm(e);
+                const isValid = validPass(password, e.target.value);
+                console.log(e.target.value, password)
+                if (isValid) {
+                  e.target.classList.remove('setRed');
+                } else {
+                  e.target.classList.add('setRed');
+                }
+              }}
               placeholder={"Повторите пароль"}
             />
           </form>
