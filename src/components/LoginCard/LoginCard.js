@@ -22,7 +22,8 @@ export const LoginCard = (params) => {
   async function register(e) {
     e.preventDefault();
     try {
-      if (validName() && ValidMail()) {
+      if (validName(userName) && ValidMail(email) && comparePass(password, passwordAffirm)) {
+        console.log(1)
         const res = await UserService.register(email, password);
         store.setUser(res.data.user);
         console.log(store.user);
