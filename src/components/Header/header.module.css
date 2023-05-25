@@ -1,0 +1,32 @@
+.mainContainer {
+    padding-left: 100px;
+    padding-right: 70px;
+    height: 141px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menuContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menuContainer > *:not(:last-child) {
+    margin-right: 48px;
+}
+.logo img {
+    width: 100%;
+    height: min-content;
+}
+.logo {
+    width: 250px;
+}
+.buttonsContainer {
+    width: min-content;
+}
+
+.menuItem {
+    color: var(--menuText);
+    font-weight: 300;
+    font-family: 'Open Sans';
+}
