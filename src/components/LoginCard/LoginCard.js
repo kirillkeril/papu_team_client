@@ -1,6 +1,6 @@
 import { Image } from "../UIKit/Image/Image";
 import styles from "./loginCard.module.css";
-import { useContext, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { Context } from "../../index";
 import UserService from "../../services/user.service";
 import { Input } from "../UIKit/Input/Input";
@@ -13,27 +13,54 @@ export const LoginCard = (params) => {
   const [passwordAffirm, setPasswordAffrm] = useState("");
   const { store } = useContext(Context);
   const [isAuth, setAuth] = useState(true);
+  const nameInp = useRef();
+
   function handleEmail(e) {
     setEmail(e.target.value);
   }
   function handlePassword(e) {
     setPassword(e.target.value);
   }
+
+  function setRed(formID) {
+    let page = document.querySelector(formID);
+    page.classList.add("setRed");
+    // console.log(nameInp.current);
+  }
+  function reset(formID) {
+    let page = document.querySelector(formID);
+    page.classList.remove("setRed");
+  }
+
   async function register(e) {
     e.preventDefault();
-    try {
-      if (validName(userName) && ValidMail(email) && comparePass(password, passwordAffirm)) {
-        console.log(1)
-        const res = await UserService.register(email, password);
-        store.setUser(res.data.user);
-        console.log(store.user);
+
+    if (validName(userName)) {
+      reset("#userName");
+      if (validMail(email)) {
+        reset("#email");
+        if (validPass(password, passwordAffirm)) {
+          reset("#password");
+          try {
+            const res = await UserService.register(email, password);
+            store.setUser(res.data.user);
+            console.log(store.user);
+          } catch (e) {
+            console.log(e);
+          }
+        } else {
+          setRed("#password");
+        }
+      } else {
+        setRed("#email");
       }
-    } catch (e) {
-      console.log(e);
+    } else {
+      setRed("#userName");
     }
   }
+
   //Валидация мэйла
-  function ValidMail(email) {
+  function validMail(email) {
     var re = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
     var valid = re.test(email);
     return valid;
@@ -47,7 +74,7 @@ export const LoginCard = (params) => {
   }
 
   //Сравнение паролей
-  function comparePass(password, passAffirm) {
+  function validPass(password, passAffirm) {
     if (password === passAffirm) {
       if (password !== "") return true;
     } else {
@@ -94,6 +121,7 @@ export const LoginCard = (params) => {
               placeholder={"Электронная почта"}
               style={{ marginBottom: "24px" }}
               name={"email"}
+              id={"email"}
               type={"email"}
               value={email}
               onChange={handleEmail}
@@ -101,6 +129,7 @@ export const LoginCard = (params) => {
             <Input
               placeholder={"Пароль"}
               name={"password"}
+              id={"password"}
               type={"password"}
               value={password}
               onChange={handlePassword}
@@ -131,9 +160,10 @@ export const LoginCard = (params) => {
           <span className={styles.span}>Войдите в аккаунт</span>
           <form className={styles.registerForm}>
             <Input
+              ref={nameInp}
               style={{ marginBottom: "24px" }}
               name={"userName"}
-              type={"userName"}
+              id={"userName"}
               value={userName}
               onChange={handleUserName}
               placeholder={"Как вас зовут?"}
@@ -142,6 +172,7 @@ export const LoginCard = (params) => {
               style={{ marginBottom: "24px" }}
               name={"email"}
               type={"email"}
+              id={"email"}
               value={email}
               onChange={handleEmail}
               placeholder={"Электронная почта"}
@@ -149,6 +180,7 @@ export const LoginCard = (params) => {
             <Input
               style={{ marginBottom: "24px" }}
               name={"password"}
+              id={"password"}
               type={"password"}
               value={password}
               onChange={handlePassword}
@@ -157,6 +189,7 @@ export const LoginCard = (params) => {
             <Input
               name={"password"}
               type={"password"}
+              id={"password"}
               value={passwordAffirm}
               onChange={handlePasswordAffirm}
               placeholder={"Повторите пароль"}
