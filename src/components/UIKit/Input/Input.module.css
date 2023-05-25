@@ -1,8 +1,12 @@
 .input {
     padding: 19px 16px;
-    min-width: 350px;
     border-radius: 10px !important;
     border: 1px solid var(--brandColor) !important;
     outline: none;
     font-family: 'Open Sans';
+}
+@media (max-width: 480px) {
+    .input {
+        width: 70vw !important;
+    }
 }

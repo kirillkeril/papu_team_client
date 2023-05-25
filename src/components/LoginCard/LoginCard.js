@@ -118,8 +118,9 @@ export const LoginCard = (params) => {
           <span className={styles.span}>Войдите в аккаунт</span>
           <form className={styles.registerForm}>
             <Input
+              // width={"350px"}
               placeholder={"Электронная почта"}
-              style={{ marginBottom: "24px" }}
+              style={{ marginBottom: "24px", width: '350px'}}
               name={"email"}
               id={"email"}
               type={"email"}
@@ -127,6 +128,7 @@ export const LoginCard = (params) => {
               onChange={handleEmail}
             />
             <Input
+              style={{width: '350px'}}
               placeholder={"Пароль"}
               name={"password"}
               id={"password"}
@@ -154,14 +156,14 @@ export const LoginCard = (params) => {
   } else {
     return (
       <div className={styles.registerCard}>
-        <Image width={"250px"} src={"/source/logo.svg"} />
+        <Image style={{width:"250px"}} src={"/source/logo.svg"} />
 
         <div className={styles.formContainer}>
           <span className={styles.span}>Войдите в аккаунт</span>
           <form className={styles.registerForm}>
             <Input
               ref={nameInp}
-              style={{ marginBottom: "24px" }}
+              style={{ marginBottom: "24px", width:"350px"}}
               name={"userName"}
               id={"userName"}
               value={userName}
@@ -178,7 +180,7 @@ export const LoginCard = (params) => {
               placeholder={"Как вас зовут?"}
             />
             <Input
-              style={{ marginBottom: "24px" }}
+              style={{ marginBottom: "24px",width:'350px'}}
               name={"email"}
               type={"email"}
               id={"email"}
@@ -196,7 +198,7 @@ export const LoginCard = (params) => {
               placeholder={"Электронная почта"}
             />
             <Input
-              style={{ marginBottom: "24px" }}
+              style={{ marginBottom: "24px", width: '350px'}}
               name={"password"}
               id={"password"}
               type={"password"}
@@ -208,9 +210,11 @@ export const LoginCard = (params) => {
               placeholder={"Пароль"}
             />
             <Input
+              style={{width:"350px"}}
               name={"password"}
               type={"password"}
               id={"password"}
+              width={'350px'}
               value={passwordAffirm}
               onChange={(e) => {
                 handlePasswordAffirm(e);
