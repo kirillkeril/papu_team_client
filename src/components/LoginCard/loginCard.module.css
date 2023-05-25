@@ -35,7 +35,10 @@
 }
 .registerLink {
     color: #007A4F;
-    font-weight: 300;
+    font-weight: 400;
+}
+.registerLink:hover {
+    cursor: pointer;
 }
 .agreement{
     font-family: "Open Sans";
