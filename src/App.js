@@ -1,11 +1,11 @@
-import {RegisterPage} from "./pages/RegisterPage";
+import { RegisterPage } from "./pages/RegisterPage";
 
 function App() {
-    return (
-        <div className="App">
-            <RegisterPage/>
-        </div>
-    );
+  return (
+    <div className="App">
+      <RegisterPage />
+    </div>
+  );
 }
 
 export default App;
