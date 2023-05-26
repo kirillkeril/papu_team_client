@@ -4,8 +4,8 @@ import React, { Component } from "react";
 import {MainPage} from "./pages/MainPage/MainPage";
 import {ProductPage} from "./pages/ProductPage/ProductPage";
 import {Profile} from "./components/Profile/Profile";
-
-function App() {
+import {observer} from "mobx-react-lite";
+const App = observer(({store}) => {
   return (
     // <div className="App">
     //   <LoginPage />
@@ -19,6 +19,6 @@ function App() {
       </Routes>
     </BrowserRouter>
   );
-}
+})
 
 export default App;

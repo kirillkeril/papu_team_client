@@ -82,7 +82,7 @@ export const LoginCard = (params) => {
     try {
       const res = await UserService.login(email, password);
       store.setUser(res.data.user);
-      console.log(store.user);
+      console.log(store.user, "login");
       return navigate("/");
     } catch (e) {
       console.log(e);

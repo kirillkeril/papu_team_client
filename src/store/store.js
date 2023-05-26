@@ -2,18 +2,26 @@ import {makeAutoObservable} from "mobx";
 import UserService from "../services/user.service";
 
 export default class Store {
+    user;
+    isAuth;
     constructor() {
         makeAutoObservable(this);
     }
 
-    setAuth(isAuth) {
-        this.isAuth = isAuth;
+    getUser = () => {
+        return this.user;
     }
-    setUser(user) {
+    getAuth = () => {
+        return this.isAuth;
+    }
+    setAuth = (auth) => {
+        this.isAuth = auth;
+    }
+    setUser = (user) => {
         this.user = user;
     }
 
-    async login(email, password) {
+    login = async (email, password) => {
         try {
             const user = await UserService.login(email, password);
             localStorage.setItem('token', user.data.accessToken);
@@ -23,7 +31,7 @@ export default class Store {
             console.log(e.response?.data?.message);
         }
     }
-    async register(email, password) {
+    register = async (email, password) => {
         try {
             const user = await UserService.register(email, password);
             localStorage.setItem('token', user.data.accessToken);
@@ -33,8 +41,9 @@ export default class Store {
             console.log(e.response?.data?.message);
         }
     }
-    async logout(email, password) {
+    logout = async (email, password) => {
         try {
+            console.log('logout');
             const user = await UserService.logout();
             localStorage.removeItem('token');
             this.setUser(null);
