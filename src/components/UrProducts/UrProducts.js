@@ -14,12 +14,10 @@ export const UrProducts = () => {
       <div className={styles.textDiv}>ВАШИ ТОВАРЫ</div>
       <div className={styles.delay}>
         <div className={styles.forAllCards}>
-          <div className={styles.textDiv}>
-            <ProductForm />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-          </div>
+          <ProductForm />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
         </div>
       </div>
     </div>
