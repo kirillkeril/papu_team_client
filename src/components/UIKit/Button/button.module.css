@@ -10,6 +10,8 @@
     cursor: pointer;
     border: none;
     transition: all 0.2s;
+    white-space: nowrap
+    
 }
 .button:hover {
     background: #007A4F;
