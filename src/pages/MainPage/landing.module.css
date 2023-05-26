@@ -16,3 +16,29 @@
     flex-direction: column;
     align-items: center;
 }
+
+ @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,600&display=swap');
+
+.productList{
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    float: left;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    width: 100%;
+
+
+}
+.headText{
+    font-family: 'Raleway', italic;
+    font-size: 48px;
+    margin-top: 107px;
+    text-align: left;
+    
+}
+.ourProductDiv{
+    width: 100%;
+    margin: 0 auto;
+}
