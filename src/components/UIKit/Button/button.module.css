@@ -3,13 +3,18 @@
     height: min-content;
     background: #80CA7B;
     border-radius: 10px;
-    padding: 14px 85px;
+    padding: 11px 85px;
     font-size: 20px;
     color: var(--buttonTextColor);
     font-family: 'Open Sans';
     cursor: pointer;
     border: none;
     transition: all 0.2s;
+}
+.light {
+    background: white;
+    color: var(--buttonTextColor);
+    border: 2px solid var(--buttonTextColor);
 }
 .button:hover {
     background: #007A4F;
