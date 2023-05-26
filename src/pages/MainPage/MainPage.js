@@ -9,13 +9,12 @@ export const MainPage = () => {
   return (
     <div className={styles.page}>
       <Header />
-      <main>
-        <div className={styles.divBannerMain}>
-          <div className={styles.divBannerChild}>
-            <Image src={"/source/bannerImg.svg"} />
+      <main className={styles.mainBlock}>
+          <div className={styles.banner}>
+            <div style={{position: 'absolute', top: 0, left: 0, right: 0, bottom: 0}}>
+                <Image style={{position: 'absolute', top: 0, left: 0, right: 0, bottom: 0}} width={"100%"} src={"/source/banner.svg"} />
+            </div>
           </div>
-        </div>
-        
       </main>
     </div>
   );

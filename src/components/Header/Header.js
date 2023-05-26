@@ -11,7 +11,7 @@ export const Header = () => {
     return (
         <header className={styles.mainContainer}>
             <Image width={'250px'} src={'./source/logo.svg'} />
-            <Input name={'search'} placeholder={'Найти среди 1000 товаров'} style={{width: '400px', marginLeft: '-60px'}}/>
+            <Input name={'search'} placeholder={'Найти среди 1000 товаров'} style={{width: '20%', marginLeft: '-60px'}}/>
             <menu className={styles.menuContainer}>
                 <div className={styles.menuItem}>Фермерам</div>
                 <div className={styles.menuItem}>Доставка</div>
