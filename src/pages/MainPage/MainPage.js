@@ -3,23 +3,18 @@ import { Header } from "../../components/Header/Header";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import Store from "../../store/store";
-import bannerImg from "../../../public/bannerImg.svg";
-
+import { Image } from "../../components/UIKit/Image/Image";
 export const MainPage = () => {
   const store = useContext(Store);
   return (
     <div className={styles.page}>
       <Header />
       <main>
-        <div
-          className={styles.bannerJPG}
-          style={{
-            backgroundImage: "url(./source/bannerImg.svg)",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
-        ></div>
+        <div className={styles.divBannerMain}>
+          <div className={styles.divBannerChild}>
+            <Image width={"1711px"} src={"/source/bannerImg.svg"} />
+          </div>
+        </div>
       </main>
     </div>
   );
