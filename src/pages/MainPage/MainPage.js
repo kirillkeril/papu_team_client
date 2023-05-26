@@ -12,9 +12,10 @@ export const MainPage = () => {
       <main>
         <div className={styles.divBannerMain}>
           <div className={styles.divBannerChild}>
-            <Image width={"1711px"} src={"/source/bannerImg.svg"} />
+            <Image src={"/source/bannerImg.svg"} />
           </div>
         </div>
+        
       </main>
     </div>
   );
