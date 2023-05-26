@@ -33,77 +33,95 @@ export const ProductForm = () => {
   }
 
   return (
-    <form className={styles.productMainForm}>
-      <Input
-        onChange={(e) => {
-          setProduct({ ...product, name: e.target.value });
-          const isValid = validName(e.target.value);
-          if (isValid) {
-            e.target.classList.remove("setRed");
-          } else {
-            e.target.classList.add("setRed");
-          }
-        }}
-        name={"name"}
-        placeholder={"Название"}
-        id={"name"}
-      />
-      <Input
-        style={{ marginTop: "10px" }}
-        onChange={(e) => {
-          setProduct({ ...product, name: e.target.value });
-          const isValid = e.target.value.length > 0;
-          if (isValid) {
-            e.target.classList.remove("setRed");
-          } else {
-            e.target.classList.add("setRed");
-          }
-        }}
-        name={"desc"}
-        placeholder={"Описание"}
-        id={"desc"}
-      />
-      <select className={styles.selectCategory}>
-        <option value={""}>Категория...</option>
-        <option value={"meet"}>Мясо</option>
-        <option value={"milk"}>Молоко</option>
-        <option value={"egg"}>Яйца</option>
-      </select>
-      <div className={styles.divPriceAmount}>
+    <div className={styles.mainDiv}>
+      <form className={styles.productMainForm}>
         <Input
-          style={{ width: "57px" }}
+          style={{ width: "100%" }}
           onChange={(e) => {
             setProduct({ ...product, name: e.target.value });
-            const isValid = validPrice(e.target.value);
+            const isValid = validName(e.target.value);
             if (isValid) {
               e.target.classList.remove("setRed");
             } else {
               e.target.classList.add("setRed");
             }
           }}
-          name={"price"}
-          placeholder={"Цена"}
-          id={"price"}
+          name={"name"}
+          placeholder={"Название"}
+          id={"name"}
         />
         <Input
-          style={{ width: "57px", marginLeft: "5px" }}
+          style={{ width: "100%", marginTop: "10px" }}
           onChange={(e) => {
             setProduct({ ...product, name: e.target.value });
-            const isValid = validNumb(e.target.value);
+            const isValid = e.target.value.length > 0;
             if (isValid) {
               e.target.classList.remove("setRed");
             } else {
               e.target.classList.add("setRed");
             }
           }}
-          name={"amount"}
-          placeholder={"Кол-во товара"}
-          id={"amount"}
+          name={"desc"}
+          placeholder={"Описание"}
+          id={"desc"}
         />
-      </div>
-      <Button style={{ marginTop: "10px", width: "100%", padding: "14px" }}>
-        Принять
-      </Button>
-    </form>
+        <select className={styles.selectCategory}>
+          <option value={""}>Категория...</option>
+          <option value={"meet"}>Мясо</option>
+          <option value={"milk"}>Молоко</option>
+          <option value={"egg"}>Яйца</option>
+        </select>
+        <div className={styles.divPriceAmount}>
+          <Input
+            style={{ width: "140px" }}
+            onChange={(e) => {
+              setProduct({ ...product, name: e.target.value });
+              const isValid = validPrice(e.target.value);
+              if (isValid) {
+                e.target.classList.remove("setRed");
+              } else {
+                e.target.classList.add("setRed");
+              }
+            }}
+            name={"price"}
+            placeholder={"Цена"}
+            id={"price"}
+          />
+          <Input
+            style={{ width: "140px" }}
+            onChange={(e) => {
+              setProduct({ ...product, name: e.target.value });
+              const isValid = validNumb(e.target.value);
+              if (isValid) {
+                e.target.classList.remove("setRed");
+              } else {
+                e.target.classList.add("setRed");
+              }
+            }}
+            name={"amount"}
+            placeholder={"Кол-во товара"}
+            id={"amount"}
+          />
+        </div>
+        <Input
+          style={{ width: "100%", marginTop: "10px" }}
+          onChange={(e) => {
+            setProduct({ ...product, name: e.target.value });
+            const isValid = e.target.value.length > 0;
+            if (isValid) {
+              e.target.classList.remove("setRed");
+            } else {
+              e.target.classList.add("setRed");
+            }
+          }}
+          name={"desc"}
+          placeholder={"Дата возможного заказа"}
+          id={"desc"}
+        />
+        <Button style={{ marginTop: "10px", width: "100%", padding: "14px" }}>
+          Принять
+        </Button>
+      </form>
+    </div>
   );
 };
