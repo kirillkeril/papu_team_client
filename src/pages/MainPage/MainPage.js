@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import Store from "../../store/store";
 import { Image } from "../../components/UIKit/Image/Image";
+import {Footer} from "../../components/footer/Footer";
 import backery from "../../img/backery.png";
 import grocery from "../../img/grocery.png";
 import meet from "../../img/meet.png";
@@ -34,7 +35,7 @@ export const MainPage = () => {
               }}
               width={"100%"}
               src={"/source/banner.svg"}
-            />
+              />
           </div>
         </div>
 
@@ -52,45 +53,46 @@ export const MainPage = () => {
               }}
               src={meet}
               width={"252px"}
-            />
+              />
             <Image
               onClick={() => {
                 navigate("/");
               }}
               src={milk}
               width={"252px"}
-            />
+              />
             <Image
               onClick={() => {
                 navigate("/");
               }}
               src={vegetables}
               width={"252px"}
-            />
+              />
             <Image
               onClick={() => {
                 navigate("/");
               }}
               src={grocery}
               width={"252px"}
-            />
+              />
             <Image
               onClick={() => {
                 navigate("/");
               }}
               src={sweets}
               width={"252px"}
-            />
+              />
             <Image
               onClick={() => {
                 navigate("/");
               }}
               src={backery}
               width={"252px"}
-            />
+              />
           </div>
         </div>
       </main>
+      <Footer/>
     </div>
   );
 };
