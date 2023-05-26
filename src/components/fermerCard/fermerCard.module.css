@@ -94,3 +94,9 @@
     border-radius: 10px;
     border: 1px solid;
 }
+.bt:hover {
+    background: #007A4F;
+}
+.bt:active {
+    scale: 0.95;
+}

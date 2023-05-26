@@ -13,6 +13,7 @@ import sweets from "../../img/sweets.png";
 import vegetables from "../../img/vegetables.png";
 import { Button } from "../../components/UIKit/Button/Button";
 import { FermerCard } from "../../components/fermerCard/fermerCard";
+import { FermerForm } from "../../components/fermerForm/FermerForm";
 
 export const MainPage = () => {
   const store = useContext(Store);
@@ -129,6 +130,7 @@ export const MainPage = () => {
               <FermerCard />
             </div>
           </div>
+          {/* <FermerForm /> */}
         </main>
       </div>
       <Footer />
