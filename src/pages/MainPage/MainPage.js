@@ -12,12 +12,11 @@ import milk from "../../img/milk.png";
 import sweets from "../../img/sweets.png";
 import vegetables from "../../img/vegetables.png";
 import { Button } from "../../components/UIKit/Button/Button";
+import { FermerCard } from "../../components/fermerCard/fermerCard";
 
 export const MainPage = () => {
   const store = useContext(Store);
   const navigate = useNavigate();
-
-  const photo = [<img src="../../img/meet.png" />, <img src={milk} />];
 
   return (
     <>
@@ -116,6 +115,18 @@ export const MainPage = () => {
               <button className={styles.butChooseProduct}>
                 Выбрать товары
               </button>
+            </div>
+          </div>
+
+          <div className={styles.fermersDiv}>
+            <div className={styles.fermersText}>
+              ФЕРМЕРЫ, КОТОРЫЕ ТРУДЯТСЯ ДЛЯ ВАС
+            </div>
+            <div className={styles.fermersCards}>
+              <FermerCard />
+              <FermerCard />
+              <FermerCard />
+              <FermerCard />
             </div>
           </div>
         </main>
