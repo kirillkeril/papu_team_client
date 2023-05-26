@@ -10,8 +10,10 @@ export const MainPage = () => {
     <div className={styles.page}>
       <Header />
       <main className={styles.mainBlock}>
-          <div className={styles.divBannerChild}>
-            <Image style={{position: 'absolute', top: 0, left: 0, right: 0, bottom: 0}} width={"100%"} src={"/source/bannerImg.svg"} />
+          <div className={styles.banner}>
+            <div style={{position: 'absolute', top: 0, left: 0, right: 0, bottom: 0}}>
+                <Image style={{position: 'absolute', top: 0, left: 0, right: 0, bottom: 0}} width={"100%"} src={"/source/banner.svg"} />
+            </div>
           </div>
       </main>
     </div>
