@@ -1,7 +1,7 @@
 import axios from "axios";
 
-// const API_URL = 'http://localhost:80/api';
-const API_URL = 'https://farm.vp-pspu.cf/api';
+const API_URL = 'http://localhost:80/api';
+// const API_URL = 'https://farm.vp-pspu.cf/api';
 
 const api = axios.create({
     withCredentials: true,
