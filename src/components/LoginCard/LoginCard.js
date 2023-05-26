@@ -30,6 +30,7 @@ export const LoginCard = (params) => {
       const res = await UserService.register(email, password);
       store.setUser(res.data.user);
       console.log(store.user);
+      return navigate("/");
     } catch (e) {
       console.log(e);
     }

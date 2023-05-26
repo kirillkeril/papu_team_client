@@ -1,5 +1,9 @@
 .page {
     padding: 0 104px;
+    
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 .banner{
     position: relative;
@@ -43,4 +47,25 @@
 .ourProductDiv{
     width: 100%;
     margin: 0 auto;
+}
+.productBasket{
+    margin-top: 99px;
+    position: relative;
+}
+.basketText{
+    font-family: 'Raleway', italic;
+    font-size: 48px;
+}
+.basketDivMain{
+    position: absolute;
+    left: 40px;
+    top: 221px;
+    color: #ffff;
+    width: 50%;
+}
+.basketTextP{
+    margin-top: 32px;
+    
+    width:85%;
+    
 }

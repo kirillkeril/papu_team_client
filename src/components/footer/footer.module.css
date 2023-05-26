@@ -1,17 +1,19 @@
 .footer {
     font-family: "Open Sans";
     padding: 32px 104px 18px 104px;
-    position: absolute;
-    bottom: 0;
+    
+    /* bottom: 0;
     right: 0;
     left: 0;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    min-height: 400px;
-    background: #EAF0FF;
+    justify-content: space-between;*/
+    min-height: min-content;
+    background: #EAF0FF; 
+    margin-top: 200px;
+    
 }
 .top {
     width: 100%;
