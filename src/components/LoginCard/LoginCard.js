@@ -5,6 +5,7 @@ import { Context } from "../../index";
 import UserService from "../../services/user.service";
 import { Input } from "../UIKit/Input/Input";
 import { Button } from "../UIKit/Button/Button";
+import { useNavigate } from "react-router-dom";
 
 export const LoginCard = (params) => {
   const [email, setEmail] = useState("");
@@ -74,12 +75,14 @@ export const LoginCard = (params) => {
   function handlePasswordAffirm(e) {
     setPasswordAffrm(e.target.value);
   }
+  const navigate = useNavigate();
   async function login(e) {
     e.preventDefault();
     try {
       const res = await UserService.login(email, password);
       store.setUser(res.data.user);
       console.log(store.user);
+      navigate("/");
     } catch (e) {
       console.log(e);
     }
@@ -112,7 +115,7 @@ export const LoginCard = (params) => {
               onChange={handlePassword}
             />
           </form>
-          <Button onClick={login}>login</Button>
+          <Button onClick={login}>Войти</Button>
         </div>
 
         <footer className={styles.footer}>

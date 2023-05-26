@@ -10,6 +10,7 @@ import meet from "../../img/meet.png";
 import milk from "../../img/milk.png";
 import sweets from "../../img/sweets.png";
 import vegetables from "../../img/vegetables.png";
+import { Button } from "../../components/UIKit/Button/Button";
 
 export const MainPage = () => {
   const store = useContext(Store);
@@ -38,7 +39,12 @@ export const MainPage = () => {
         </div>
 
         <div className={styles.ourProductDiv}>
-          <div className={styles.headText}>НАШИ ТОВАРЫ</div>
+          <div className={styles.headText}>
+            НАШИ ТОВАРЫ
+            <Button onClick={() => navigate("/")} id={"catalog"}>
+              В каталог
+            </Button>
+          </div>
           <div className={styles.productList}>
             <Image
               onClick={() => {
