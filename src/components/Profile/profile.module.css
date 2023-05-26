@@ -1,0 +1,54 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.aboutContainer {
+    width: 50%;
+}
+.about {
+    height: min-content;
+    background: blue;
+    padding: 56px 113px;
+}
+.profile {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 300px;
+    background: gray;
+}
+.profileContainer{
+
+}
+.profileIcon{
+    width: 56px;
+    height: 56px;
+    background: #000;
+}
+.profileForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.profileName{
+    text-align: left;
+}
+.profileFooter{}
+.profileButtons{}
+
+.cards {}
+
+
+.products {
+    width: 50%;
+    min-height: 500px;
+    background: green;
+}
+.productsContainer {
+
+}
