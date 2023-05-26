@@ -13,6 +13,10 @@ export const ProductForm = () => {
   };
   const [product, setProduct] = useState(initial);
 
+  const save = async () => {
+
+  }
+
   //Валидация имени
   function validName(name) {
     var re = /^[A-ZА-ЯЁ]+$/i;

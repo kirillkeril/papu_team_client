@@ -2,34 +2,34 @@ import { Image } from "../UIKit/Image/Image";
 import styles from "./loginCard.module.css";
 import { useContext, useRef, useState } from "react";
 import { Context } from "../../index";
-import UserService from "../../services/user.service";
 import { Input } from "../UIKit/Input/Input";
 import { Button } from "../UIKit/Button/Button";
 import { useNavigate } from "react-router-dom";
+import {observer} from "mobx-react-lite";
 
-export const LoginCard = (params) => {
+export const LoginCard = observer((params) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [userName, setUserName] = useState("");
   const [passwordAffirm, setPasswordAffrm] = useState("");
-  const { store } = useContext(Context);
   const [isAuth, setAuth] = useState(true);
   const nameInp = useRef();
-
-  function handleEmail(e) {
-    setEmail(e.target.value);
-  }
-  function handlePassword(e) {
-    setPassword(e.target.value);
-  }
+  const {store} = useContext(Context);
 
   async function register(e) {
     e.preventDefault();
 
     try {
-      const res = await UserService.register(email, password);
-      store.setUser(res.data.user);
-      console.log(store.user);
+      await store.register(email, password);
+      return navigate("/");
+    } catch (e) {
+      console.log(e);
+    }
+  }
+  async function login(e) {
+    e.preventDefault();
+    try {
+      await store.login(email, password);
       return navigate("/");
     } catch (e) {
       console.log(e);
@@ -77,21 +77,10 @@ export const LoginCard = (params) => {
     setPasswordAffrm(e.target.value);
   }
   const navigate = useNavigate();
-  async function login(e) {
-    e.preventDefault();
-    try {
-      const res = await UserService.login(email, password);
-      store.setUser(res.data.user);
-      console.log(store.user, "login");
-      return navigate("/");
-    } catch (e) {
-      console.log(e);
-    }
-  }
   if (isAuth) {
     return (
       <div className={styles.registerCard}>
-        <Image width={"250px"} src={"/source/logo.svg"} />
+        <Image width={"155px"} src={"/source/logo.svg"} />
 
         <div className={styles.formContainer}>
           <span className={styles.span}>Войдите в аккаунт</span>
@@ -99,7 +88,7 @@ export const LoginCard = (params) => {
             <Input
               // width={"350px"}
               placeholder={"Электронная почта"}
-              style={{ marginBottom: "24px", width: "350px" }}
+              style={{ width: "100%" }}
               name={"email"}
               id={"email"}
               type={"email"}
@@ -107,7 +96,7 @@ export const LoginCard = (params) => {
               onChange={handleEmail}
             />
             <Input
-              style={{ width: "350px" }}
+              style={{ width: "100%" }}
               placeholder={"Пароль"}
               name={"password"}
               id={"password"}
@@ -225,4 +214,4 @@ export const LoginCard = (params) => {
       </div>
     );
   }
-};
+});

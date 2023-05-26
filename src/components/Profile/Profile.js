@@ -5,13 +5,13 @@ import {Context} from "../../index";
 import {UrProducts} from "../UrProducts/UrProducts";
 export const Profile = () => {
     const {store} = useContext(Context);
-    return (
+    if(store.isAuth) return (
         <div className={styles.container}>
             <div className={styles.aboutContainer}>
                 <h2 className={styles.aboutText}>ОБ АККАУНТЕ</h2>
                 <div className={styles.profile}>
                     <div className={styles.profileContainer} >
-                        <div className={styles.profileName}>Александр</div>
+                        <div className={styles.profileName}>{store.user.name}</div>
                         <div className={styles.profileForm}>
                             <Input style={{width:'464px'}} name={'name'}/>
                             <Input style={{width:'464px'}} name={'surname'}/>

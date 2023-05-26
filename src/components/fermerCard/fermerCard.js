@@ -1,8 +1,6 @@
 import styles from "./fermerCard.module.css";
 import { Header } from "../../components/Header/Header";
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
-import Store from "../../store/store";
 import { Image } from "../../components/UIKit/Image/Image";
 
 export const FermerCard = (props) => {

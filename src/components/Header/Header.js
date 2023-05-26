@@ -5,11 +5,12 @@ import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { Context } from "../../index";
 import { Input } from "../UIKit/Input/Input";
+import {observer} from "mobx-react-lite";
 
-export const Header = () => {
+const Header = observer(() => {
     const navigate = useNavigate();
     const {store} = useContext(Context);
-    console.log(store.getAuth(), store.getUser());
+    console.log(store.isAuth);
     return (
         <header className={styles.mainContainer}>
             <div className={styles.logo}>
@@ -22,7 +23,7 @@ export const Header = () => {
                 <div className={styles.menuItem}>Контакты</div>
             </menu>
             <div className={styles.buttonsContainer}>
-                {!store.getAuth() && <Button onClick={() => navigate('/login')} id={'auth'}>Вход/Регистрация</Button>}
+                {!store.isAuth && <Button onClick={() => navigate('/login')} id={'auth'}>Вход/Регистрация</Button>}
                 <Button style={{padding: '10px', marginLeft: '16px', marginRight: '16px'}}>
                     <Image src={'./source/basket.svg'} width={'28px'}/>
                 </Button>
@@ -32,4 +33,5 @@ export const Header = () => {
             </div>
         </header>
     );
-}
+})
+export default Header;
