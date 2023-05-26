@@ -10,8 +10,10 @@ export const Header = () => {
     const {state} = useContext(Context);
     return (
         <header className={styles.mainContainer}>
-            <Image width={'250px'} src={'./source/logo.svg'} />
-            <Input name={'search'} placeholder={'Найти среди 1000 товаров'} style={{width: '20%', marginLeft: '-60px'}}/>
+            <div className={styles.logo}>
+                <Image width={'100%'} src={'./source/logo.svg'} />
+                <Input name={'search'} placeholder={'Найти среди 1000 товаров'} style={{width: '20%', marginLeft: '40px'}}/>
+            </div>
             <menu className={styles.menuContainer}>
                 <div className={styles.menuItem}>Фермерам</div>
                 <div className={styles.menuItem}>Доставка</div>

@@ -20,6 +20,17 @@
 }
 .logo {
     width: 250px;
+    display: flex;
+    align-items: center;
+    min-width: 350px;
+}
+.logo input {
+}
+@media (max-width: 1440px) {
+    .logo {
+        width: 100px;
+    }
+
 }
 .buttonsContainer {
     width: min-content;
