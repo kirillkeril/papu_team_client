@@ -113,7 +113,9 @@ export const MainPage = () => {
                 продуктовую корзину. Мы будем доставлять именно эти продукты
                 каждый выбранный вами период
               </p>
-              <Button>Выбрать товары</Button>
+              <button className={styles.butChooseProduct}>
+                Выбрать товары
+              </button>
             </div>
           </div>
         </main>
