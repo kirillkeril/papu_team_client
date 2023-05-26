@@ -1,14 +1,16 @@
 .page {
-
+    padding: 0 104px;
 }
 
 .divBannerMain{
-    position: relative;
-    width: 90vw;
-    margin: 0 auto;
-    
 }
 .divBannerChild{
-    position: absolute;
-    
+    position: relative;
+    width: 100%;
+}
+.mainBlock {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
