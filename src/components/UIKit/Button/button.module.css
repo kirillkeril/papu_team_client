@@ -11,11 +11,6 @@
     border: none;
     transition: all 0.2s;
 }
-.light {
-    background: white;
-    color: var(--buttonTextColor);
-    border: 2px solid var(--buttonTextColor);
-}
 .button:hover {
     background: #007A4F;
 }

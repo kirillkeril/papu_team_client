@@ -11,7 +11,7 @@ export const Header = () => {
     return (
         <header className={styles.mainContainer}>
             <Image width={'250px'} src={'./source/logo.svg'} />
-            <Input name={'search'} placeholder={'Найти среди 1000 товаров'} style={{width: '400px', marginLeft: '-130px'}}/>
+            <Input name={'search'} placeholder={'Найти среди 1000 товаров'} style={{width: '400px', marginLeft: '-60px'}}/>
             <menu className={styles.menuContainer}>
                 <div className={styles.menuItem}>Фермерам</div>
                 <div className={styles.menuItem}>Доставка</div>
@@ -19,10 +19,10 @@ export const Header = () => {
             </menu>
             <div className={styles.buttonsContainer}>
                 <Button onClick={() => navigate('/login')}>Вход/Регистрация</Button>
-                <Button style={{padding: '10px'}}>
+                <Button style={{padding: '10px', marginLeft: '16px', marginRight: '16px'}}>
                     <Image src={'./source/basket.svg'} width={'28px'}/>
                 </Button>
-                <Button type={'light'} style={{padding: '10px'}}>
+                <Button style={{padding: '10px', background: 'white', border: '2px solid var(--brandColor)'}}>
                     <Image src={'./source/heart.svg'} width={'28px'}/>
                 </Button>
             </div>
