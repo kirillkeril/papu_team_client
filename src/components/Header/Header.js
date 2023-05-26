@@ -11,8 +11,8 @@ export const Header = () => {
     return (
         <header className={styles.mainContainer}>
             <div className={styles.logo}>
-                <Image width={'100%'} src={'./source/logo.svg'} />
-                <Input name={'search'} placeholder={'Найти среди 1000 товаров'} style={{width: '20%', marginLeft: '40px'}}/>
+                <Image width={'30%'} src={'./source/logo.svg'} />
+                <Input name={'search'} placeholder={'Найти среди 1000 товаров'} style={{ marginLeft: '40px'}}/>
             </div>
             <menu className={styles.menuContainer}>
                 <div className={styles.menuItem}>Фермерам</div>
@@ -20,7 +20,7 @@ export const Header = () => {
                 <div className={styles.menuItem}>Контакты</div>
             </menu>
             <div className={styles.buttonsContainer}>
-                <Button onClick={() => navigate('/login')}>Вход/Регистрация</Button>
+                <Button onClick={() => navigate('/login')} id={'auth'}>Вход/Регистрация</Button>
                 <Button style={{padding: '10px', marginLeft: '16px', marginRight: '16px'}}>
                     <Image src={'./source/basket.svg'} width={'28px'}/>
                 </Button>

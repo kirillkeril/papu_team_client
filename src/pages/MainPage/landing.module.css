@@ -5,6 +5,11 @@
     position: relative;
     width: 100%;
 }
+@media (max-width: 1440px) {
+    .page {
+        padding: 0 64px;
+    }
+}
 .mainBlock {
     width: 100%;
     display: flex;
