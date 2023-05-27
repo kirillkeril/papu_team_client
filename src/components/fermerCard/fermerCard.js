@@ -24,8 +24,7 @@ export const FermerCard = (props) => {
             <span className={styles.categ}>Категории:</span> Молоко, яйца, хлеб
           </div>
           <div className={styles.infoDescription}>
-            Описаниеописание описаниеОписаниеописание описаниеОписаниеописание
-            описание
+            Потомственный почвосажатель, отец Виткора Маразмат Вацапович приучил ребёнка к ферме
           </div>
         </div>
         <div className={styles.rightPart}>

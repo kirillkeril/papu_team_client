@@ -15,7 +15,7 @@ const Header = observer(() => {
         <header className={styles.mainContainer}>
             <div className={styles.logo}>
                 <Image width={'30%'} src={'./source/logo.svg'} />
-                <Input name={'search'} placeholder={'Найти среди 1000 товаров'} style={{ marginLeft: '40px'}}/>
+                <Input name={'search'} placeholder={'Найти среди 1000 товаров'} style={{ marginLeft: '20px'}}/>
             </div>
             <menu className={styles.menuContainer}>
                 <div className={styles.menuItem} onClick={() => navigate('/profile')}>Профиль</div>
@@ -24,12 +24,14 @@ const Header = observer(() => {
             </menu>
             <div className={styles.buttonsContainer}>
                 {!store.isAuth && <Button onClick={() => navigate('/login')} id={'auth'}>Вход/Регистрация</Button>}
-                <Button style={{padding: '10px', marginLeft: '16px', marginRight: '16px'}}>
-                    <Image src={'./source/basket.svg'} width={'28px'}/>
-                </Button>
-                <Button style={{padding: '10px', background: 'white', border: '2px solid var(--brandColor)'}}>
-                    <Image src={'./source/heart.svg'} width={'28px'}/>
-                </Button>
+                {store.isAuth && <>
+                    <Button style={{padding: '10px', marginLeft: '16px', marginRight: '16px'}}>
+                        <Image src={'./source/basket.svg'} width={'28px'}/>
+                    </Button>
+                    <Button style={{padding: '10px', background: 'white', border: '2px solid var(--brandColor)'}}>
+                        <Image src={'./source/heart.svg'} width={'28px'}/>
+                    </Button>
+                </>}
             </div>
         </header>
     );

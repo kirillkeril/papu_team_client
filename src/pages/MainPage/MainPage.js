@@ -24,16 +24,18 @@ export const MainPage = () => {
         <Header />
         <main className={styles.mainBlock}>
           <div className={styles.banner}>
-            <div className={styles.bannerText}>
-              Свежие продукты <br/> от профессиональных фермеров
+            <div className={styles.bannerContent}>
+              <div className={styles.bannerText}>
+                Свежие продукты <br/> от профессиональных фермеров
+              </div>
+              <div className={styles.bannerTextP}>Доставляем по всей России</div>
             </div>
-            <div className={styles.bannerTextP}>Доставляем по всей России</div>
           </div>
 
           <div className={styles.ourProductDiv}>
             <div className={styles.headText}>
               <span>НАШИ ТОВАРЫ</span>
-              <div>
+              <div className={styles.catalogButton}>
                 <Button onClick={() => navigate("/")} id={"catalog"}>
                   В каталог
                 </Button>
@@ -45,57 +47,50 @@ export const MainPage = () => {
                   navigate("/");
                 }}
                 src={meet}
-                width={"252px"}
+                // width={"252px"}
               />
               <Image
                 onClick={() => {
                   navigate("/");
                 }}
                 src={milk}
-                width={"252px"}
+                // width={"252px"}
               />
               <Image
                 onClick={() => {
                   navigate("/");
                 }}
                 src={vegetables}
-                width={"252px"}
+                // width={"252px"}
               />
               <Image
                 onClick={() => {
                   navigate("/");
                 }}
                 src={grocery}
-                width={"252px"}
+                // width={"252px"}
               />
               <Image
                 onClick={() => {
                   navigate("/");
                 }}
                 src={sweets}
-                width={"252px"}
+                // width={"252px"}
               />
               <Image
                 onClick={() => {
                   navigate("/");
                 }}
                 src={backery}
-                width={"252px"}
+                // width={"252px"}
               />
             </div>
           </div>
 
           <div
             className={styles.imgPG}
-            style={{
-              backgroundImage: `url(./source/banner2.svg)`,
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-              borderRadius: "10px",
-            }}
           >
-            <div className={styles.basketDivMain}>
+            <div className={styles.basketDivMain} style={{padding: '24px 16px'}}>
               <div className={styles.basketText}>ПРОДУКТОВАЯ КОРЗИНА</div>
               <p className={styles.basketTextP}>
                 Выберите продукты, которые хотели бы видеть себя на столе каждую
@@ -111,7 +106,7 @@ export const MainPage = () => {
 
           {/* <div className={styles.productBasket}>
             <Image
-              src={"./source/banner2.svg"}
+              src={"./source/bannerBucket.svg"}
               width={"100%"}
               style={{
                 position: "absolute",

@@ -12,7 +12,7 @@ const Profile = () => {
                 <h2 className={styles.aboutText}>ОБ АККАУНТЕ</h2>
                 <div className={styles.profile}>
                     <div className={styles.profileContainer} >
-                        <div className={styles.profileName}>{store.user.name}</div>
+                        <div className={styles.profileName}>{store.user.email}</div>
                         <div className={styles.profileForm}>
                             <Input style={{width:'464px'}} name={'name'}/>
                             <Input style={{width:'464px'}} name={'surname'}/>
