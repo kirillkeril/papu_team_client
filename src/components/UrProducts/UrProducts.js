@@ -1,5 +1,6 @@
 import styles from "./UrProducts.module.css";
 import { ProductCard } from "../ProductCard/ProductCard";
+import {ProductForm} from "../ProductForm/ProductForm";
 
 export const UrProducts = ({products}) => {
     console.log(products);
@@ -8,7 +9,7 @@ export const UrProducts = ({products}) => {
       <div className={styles.textDiv}>ВАШИ ТОВАРЫ</div>
       <div className={styles.delay}>
         {/*<div className={styles.forAllCards}>*/}
-        {/*  <ProductForm />*/}
+          <ProductForm />
           {products.map((p) =>
               <ProductCard product={p}/>
           )}

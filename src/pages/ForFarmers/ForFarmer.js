@@ -9,8 +9,20 @@ import { FermerCard } from "../../components/fermerCard/fermerCard";
 import Header from "../../components/Header/Header";
 import { NewsCard } from "../../components/NewsCard/NewsCard";
 import { FermerForm } from "../../components/fermerForm/FermerForm";
+import ArticleService from "../../services/article.service";
 
 export const ForFarmer = () => {
+    const [news, setNews] = useState([]);
+
+    useEffect(() => {
+        const getArticles = async () => {
+            const res = await ArticleService.getAll();
+            console.log(res.data)
+            if(res.data) setNews(res.data);
+        }
+        getArticles();
+    }, [news.length]);
+
   return (
     <>
       <div className={styles.page}>
@@ -20,10 +32,9 @@ export const ForFarmer = () => {
                 <div className={styles.headerNewsText}></div>
                 <div className={styles.headerRight}></div>
              </div>
-             <NewsCard/>
-             <NewsCard/>
-             <NewsCard/>
-             <NewsCard/>
+            {news.map((article) =>
+                <NewsCard article={article}/>
+            )}
              <FermerForm/>
              
         </main>

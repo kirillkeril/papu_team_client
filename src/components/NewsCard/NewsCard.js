@@ -14,17 +14,18 @@ import { Button } from "../../components/UIKit/Button/Button";
 import { FermerCard } from "../../components/fermerCard/fermerCard";
 import Header from "../../components/Header/Header";
 
-export const NewsCard = (props) => {
+export const NewsCard = ({article}) => {
+  const navigate = useNavigate();
+
   return (
     <div className={styles.mainDivPadding}>
       <div className={styles.mainDivFlex}>
         <div className={styles.divTextH1}>
-          Как рассчитывать скидки на товары и услуги?
+          {article.title}
         </div>
         <div className={styles.divOverAllInfo}>
           <div className={styles.description}>
-            Полезная статья о финансах от Yandex.Buisness. Рассказываем о
-            скидках: как привлечь больше клиентов и при этом не уйти в минус?
+            {article.description}
           </div>
           <div className={styles.divkeyWords}>
             <span className={styles.keyWord}>Ключевые слова: </span>
@@ -33,7 +34,7 @@ export const NewsCard = (props) => {
             </span>
           </div>
         </div>
-        <div className={styles.button}><Button width={'252px'}>К статье</Button></div>
+        <div className={styles.button}><Button width={'252px'} onClick={() => navigate(article.link)}>К статье</Button></div>
       </div>
     </div>
   );

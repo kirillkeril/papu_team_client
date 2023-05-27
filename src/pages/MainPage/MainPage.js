@@ -14,11 +14,20 @@ import { Button } from "../../components/UIKit/Button/Button";
 import { FermerCard } from "../../components/fermerCard/fermerCard";
 import Header from "../../components/Header/Header";
 import { NewsCard } from "../../components/NewsCard/NewsCard";
+import UserService from "../../services/user.service";
 
 export const MainPage = () => {
   const store = useContext(Store);
   const navigate = useNavigate();
-  const [fermer, setFermer] = useState([]);
+  const [farmers, setFarmers] = useState([]);
+
+  useEffect(() => {
+    const getUsers = async () => {
+      const res = await UserService.getUsers();
+      if (res) setFarmers(res.data.data.filter(f => f.roles.includes('FARMER')));
+    }
+    getUsers();
+  }, [farmers.length]);
   // TODO : сделать функцию получения фермера
 
   // useEffect(() => {
@@ -149,6 +158,9 @@ export const MainPage = () => {
               ФЕРМЕРЫ, КОТОРЫЕ ТРУДЯТСЯ ДЛЯ ВАС
             </div>
             <div className={styles.fermersCards}>
+              {farmers.length > 0 && farmers.map((f) =>
+                <FermerCard farmer={f}/>
+              )}
               {/* <FermerCard fermer={fermer} />
               <FermerCard />
               <FermerCard />
