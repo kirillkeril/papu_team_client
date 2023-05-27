@@ -1,6 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,600&display=swap');
 .page {
-    padding: 0 104px;
-    
+    padding: 0 16px;
+
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -8,10 +9,14 @@
 .banner{
     position: relative;
     width: 100%;
+    min-height: 343px;
+    background: url("../../img/banner_mobile.svg") no-repeat center;
+    background-size: cover;
 }
-@media (max-width: 1440px) {
-    .page {
-        padding: 0 64px;
+@media (min-width: 450px) {
+    .banner {
+        background: url("../../img/banner.svg") no-repeat left;
+        background-size: cover;
     }
 }
 .mainBlock {
@@ -21,7 +26,6 @@
     align-items: center;
 }
 
- @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,600&display=swap');
 
 .productList{
     cursor: pointer;

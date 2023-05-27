@@ -21,22 +21,15 @@ export const MainPage = () => {
   return (
     <>
       <div className={styles.page}>
-        <Header />
+        {/*<Header />*/}
         <main className={styles.mainBlock}>
-          <div className={styles.banner}>
-            <div>
-              <Image
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                }}
-                width={"100%"}
-                src={"/source/banner.svg"}
-              />
-            </div>
+          <div
+              className={styles.banner}
+          >
+              <div>
+                  Свежие продукты от профессиональных фермеров
+              </div>
+              <div>Доставляем по всей России</div>
           </div>
 
           <div className={styles.ourProductDiv}>
@@ -155,7 +148,7 @@ export const MainPage = () => {
           </div>
         </main>
       </div>
-      <Footer />
+      {/*<Footer />*/}
     </>
   );
 };
