@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { Context } from "../../index";
 import { Input } from "../UIKit/Input/Input";
-import {observer} from "mobx-react-lite";
+import { observer } from "mobx-react-lite";
 
 const Header = observer(() => {
     const navigate = useNavigate();
