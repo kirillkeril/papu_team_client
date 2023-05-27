@@ -21,25 +21,23 @@ export const MainPage = () => {
   return (
     <>
       <div className={styles.page}>
-        {/*<Header />*/}
+        <Header />
         <main className={styles.mainBlock}>
-          <div
-              className={styles.banner}
-          >
-              <div>
-                  Свежие продукты от профессиональных фермеров
-              </div>
-              <div>Доставляем по всей России</div>
+          <div className={styles.banner}>
+            <div className={styles.bannerText}>
+              Свежие продукты <br/> от профессиональных фермеров
+            </div>
+            <div className={styles.bannerTextP}>Доставляем по всей России</div>
           </div>
 
           <div className={styles.ourProductDiv}>
             <div className={styles.headText}>
-                <span>НАШИ ТОВАРЫ</span>
-                <div>
-                    <Button onClick={() => navigate("/")} id={"catalog"}>
-                        В каталог
-                    </Button>
-                </div>
+              <span>НАШИ ТОВАРЫ</span>
+              <div>
+                <Button onClick={() => navigate("/")} id={"catalog"}>
+                  В каталог
+                </Button>
+              </div>
             </div>
             <div className={styles.productList}>
               <Image
