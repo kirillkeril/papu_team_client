@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+.mainDivPadding{
+    width: 100%;
+    height: min-content;
+    border: 2px solid #EAF0FF;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    padding: 24px;
+    margin-top: 24px;
+    justify-content: space-between;
+}
+.mainDivFlex{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.cardPhoto{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.cardInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+}
+.divTextH1{
+    text-align: left;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 33px;
+    width: 30%;
+    
+}
+.keyWord{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color:  #7C7C7C;
+}
+.keyWords{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color:  #1E1E1E;
+}
+.description{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+}
+.divOverAllInfo{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    align-items: flex-start;
+}
+.mark{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 33px;
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+}
+.button{
+    width: 252px;
+    height: 48px;
+    background-color: var(--brandColor);
+    border-color: #1E1E1E;
+    color: #ffff;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 27px;
+    border-radius: 10px;
+    border: 1px solid;
+}
+
+
+.bt{
+    
+}
+.bt:hover {
+    background: #007A4F;
+}
+.bt:active {
+    scale: 0.95;
+}
+@media (max-width: 900px) {
+    .cardMainDivPadd {
+        max-width: 600px;
+    }
+    .cardMainDivMove {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, auto);
+    }
+    .cardInfo {
+        margin: 16px 0;
+        align-items: center;
+    }
+    .cardInfo > *:not(:last-child) {
+        margin-bottom: 12px;
+    }
+    .infoDescription {
+        text-align: center;
+    }
+    .rightPart {
+        align-items: center;
+    }
+}

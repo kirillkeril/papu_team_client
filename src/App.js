@@ -6,6 +6,7 @@ import {ProductPage} from "./pages/ProductPage/ProductPage";
 import {ProfilePage} from "./pages/ProfilePage/ProfilePage";
 import {Context} from "./index";
 import {observer} from "mobx-react-lite";
+import {ForFarmer} from './pages/ForFarmers/ForFarmer'
 const App = () => {
     const {store} = useContext(Context);
 
@@ -25,6 +26,7 @@ const App = () => {
                 <Route path="/" element={<MainPage/>}/>
                 <Route path="/product" element={<ProductPage/>}/>
                 <Route path="/profile" element={<ProfilePage/>}/>
+                <Route path="/forfarmers" element={<ForFarmer/>}/>
             </Routes>
         </BrowserRouter>
     );
