@@ -13,14 +13,14 @@ const Header = observer(() => {
     console.log(store.isAuth);
     return (
         <header className={styles.mainContainer}>
-            <div className={styles.logo}>
+            <div className={styles.logo} onClick={() => navigate('/')}>
                 <Image width={'30%'} src={'./source/logo.svg'} />
                 <Input name={'search'} placeholder={'Найти среди 1000 товаров'} style={{ marginLeft: '20px'}}/>
             </div>
             <menu className={styles.menuContainer}>
                 <div className={styles.menuItem} onClick={() => navigate('/profile')}>Профиль</div>
-                <div className={styles.menuItem} onClick={() => navigate('/product')}>Продукт</div>
-                <div className={styles.menuItem}>Контакты</div>
+                <div className={styles.menuItem} onClick={() => navigate('/catalog')}>Каталог</div>
+                <div className={styles.menuItem} onClick={() => navigate('/')}>Контакты</div>
             </menu>
             <div className={styles.buttonsContainer}>
                 {!store.isAuth && <Button onClick={() => navigate('/login')} id={'auth'}>Вход/Регистрация</Button>}

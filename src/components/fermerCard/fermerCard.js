@@ -1,10 +1,7 @@
 import styles from "./fermerCard.module.css";
 import { Header } from "../../components/Header/Header";
 import { useNavigate } from "react-router-dom";
-import { Image } from "../../components/UIKit/Image/Image";
-import {useEffect, useState} from "react";
-import UserService from "../../services/user.service";
-
+import {Image} from "../UIKit/Image/Image";
 export const FermerCard = ({farmer}) => {
 
 
@@ -45,13 +42,13 @@ export const FermerCard = ({farmer}) => {
       <div className={styles.cardMainDivMove}>
         <div className={styles.cardPhoto}>
           {/* TODO Нужно передать фото */}
-          {/*<Image*/}
-          {/*  onClick={() => {*/}
-          {/*    navigate("/");*/}
-          {/*  }}*/}
-          {/*  src={farmer.photo}*/}
-          {/*  width={"143px"}*/}
-          {/*/>*/}
+          <Image
+            onClick={() => {
+              navigate("/");
+            }}
+            src={"./source/grandfather.svg"}
+            width={"143px"}
+          />
         </div>
         <div className={styles.cardInfo}>
           <div className={styles.infoName}>{farmer.name || farmer.email}</div>

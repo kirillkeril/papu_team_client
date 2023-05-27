@@ -1,7 +1,9 @@
 import { Image } from "../UIKit/Image/Image";
 import styles from "./footer.module.css";
+import {useNavigate} from "react-router-dom";
 
 export const Footer = () => {
+  const navigate = useNavigate();
   return (
     <footer className={styles.footer}>
       <div className={styles.top}>
@@ -34,7 +36,7 @@ export const Footer = () => {
         <div className={styles.column}>
           <span className={styles.spanName}>Навигация</span>
           <span>Главная</span>
-          <span>Каталог</span>
+          <span onClick={() => navigate('/catalog')}>Каталог</span>
           <span>Продуктовая корзина</span>
           <span>О нас</span>
           <span>Бонусная программа</span>
