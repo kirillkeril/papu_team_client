@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,600&display=swap');
+.page {
+    padding: 0 105px;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+@media (max-width: 600px) {
+    .page {
+        padding: 0 16px;
+    }
+}
+.banner{
+    position: relative;
+    width: 100%;
+    min-height: 343px;
+    background-image: url("../../img/banner_mobile.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.bannerText{
+    font-family: 'Raleway';
+    font-style: italic;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+
+color: #FFFFFF;
+}
+.bannerTextP{
+    white-space: nowrap;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    text-align: center;
+
+    margin-top: 32px;
+
+    color: #FFFFFF;
+
+}
+.bannerContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+@media (min-width: 360px) {
+    .bannerText {
+        font-size: 16px;
+        line-height: 2rem;
+    }
+    .bannerTextP {
+        font-size: 12px;
+    }
+}
+@media (min-width: 400px) {
+    .banner {
+        padding: 30px;
+    }
+    .bannerText {
+        font-size: 24px;
+        line-height: 3rem;
+    }
+    .bannerTextP {
+        font-size: 16px;
+    }
+}
+@media (min-width: 850px) {
+    .banner {
+        background: url("../../img/banner.svg") no-repeat left;
+        background-size: cover;
+    }
+}
+@media (min-width: 1024px) {
+    .bannerText {
+        font-size: 32px;
+    }
+    .bannerTextP {
+        font-size: 24px;
+    }
+}
+.mainBlock {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.productList {
+    margin-top: 32px;
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    grid-template-columns: repeat(6, auto);
+}
+/*.productList > * {*/
+/*    width: 300px;*/
+/*}*/
+@media (max-width: 1030px) {
+    .productList {
+        grid-template-columns: repeat(3, auto);
+        grid-template-rows: repeat(2, auto);
+    }
+}
+@media (max-width: 1030px) {
+    .productList {
+        grid-template-rows: repeat(3, auto);
+        grid-template-columns: repeat(2, auto);
+    }
+}
+
+.headText{
+    font-family: 'Raleway', italic;
+    font-size: 48px;
+    margin-top: 107px;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.catalogButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+}
+@media (max-width: 800px) {
+    .headText > span {
+        margin-bottom: 24px;
+    }
+    .catalogButton {
+        width: 100%;
+    }
+    .headText > span {
+        width: 100%;
+        text-align: center;
+        font-size: 36px;
+    }
+
+}
+@media (max-width: 620px){
+    .headText > span {
+        font-size: 32px;
+    }
+}
+.ourProductDiv{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.productBasket{
+    margin-top: 99px;
+    position: relative;
+}
+.basketText{
+    font-family: 'Raleway', italic;
+    font-size: 48px;
+}
+.basketDivMain{
+    margin-top: 220px;
+    margin-left: 40px;
+    color: #ffff;
+    width: 60%;
+}
+.imgPG{
+    background-image: url('../../img/bannerBucket.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 736px;
+    margin-top: 100px;
+}
+@media (max-width: 1024px) {
+    .basketDivMain {
+        margin-top: 50px;
+    }
+}
+@media (max-width: 650px) {
+    .imgPG {
+        min-height: 80vh;
+        background-image: url('../../img/bannerBusket_mobile.svg');
+    }
+    .basketDivMain {
+        width: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .basketDivMain * {
+        width: 100%;
+    }
+}
+.basketTextP{
+    margin-top: 32px;
+    width:85%;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 33px;
+}
+.butChooseProduct{
+    width: 252px;
+    height: 48px;
+    background-color: var(--brandColor);
+    border-color: #ffff;
+    color: #ffff;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 27px;
+    border-radius: 10px;
+    border: 1px solid;
+    margin-top: 48px;
+}
+.butChooseProduct:hover {
+    background: #fffF;
+    color: var(--brandColor);
+    border-color: var(--brandColor);
+
+}
+.butChooseProduct:active {
+    scale: 0.95;
+}
+.fermersDiv{
+    margin-top: 32px;
+    width: 100%;
+}
+.fermersText{
+    font-family: 'Raleway';
+    font-style: italic;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 56px;
+    text-align: left;
+}
+@media (max-width: 1080px) {
+    .fermersText {
+        text-align: center;
+    }
+}
+.fermersCards{
+    width: 100%;
+    height: min-content;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+}
