@@ -86,7 +86,6 @@ export const LoginCard = observer((params) => {
           <span className={styles.span}>Войдите в аккаунт</span>
           <form className={styles.registerForm}>
             <Input
-              // width={"350px"}
               placeholder={"Электронная почта"}
               style={{ width: "100%" }}
               name={"email"}
@@ -124,14 +123,14 @@ export const LoginCard = observer((params) => {
   } else {
     return (
       <div className={styles.registerCard}>
-        <Image style={{ width: "250px" }} src={"/source/logo.svg"} />
+        <Image style={{ width: "155px" }} src={"/source/logo.svg"} />
 
         <div className={styles.formContainer}>
           <span className={styles.span}>Войдите в аккаунт</span>
           <form className={styles.registerForm}>
             <Input
               ref={nameInp}
-              style={{ marginBottom: "24px", width: "350px" }}
+              style={{ marginBottom: "24px", width: "100%" }}
               name={"userName"}
               id={"userName"}
               value={userName}
@@ -147,7 +146,7 @@ export const LoginCard = observer((params) => {
               placeholder={"Как вас зовут?"}
             />
             <Input
-              style={{ marginBottom: "24px", width: "350px" }}
+              style={{ marginBottom: "24px", width: "100%" }}
               name={"email"}
               type={"email"}
               id={"email"}
@@ -164,7 +163,7 @@ export const LoginCard = observer((params) => {
               placeholder={"Электронная почта"}
             />
             <Input
-              style={{ marginBottom: "24px", width: "350px" }}
+              style={{ marginBottom: "24px", width: "100%" }}
               name={"password"}
               id={"password"}
               type={"password"}
@@ -175,7 +174,7 @@ export const LoginCard = observer((params) => {
               placeholder={"Пароль"}
             />
             <Input
-              style={{ width: "350px" }}
+              style={{ width: "100%" }}
               name={"password"}
               type={"password"}
               id={"password"}

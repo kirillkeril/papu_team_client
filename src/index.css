@@ -17,3 +17,10 @@ html, body, * {
 .setRed {
     border-color: red !important;
 }
+.page {
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
