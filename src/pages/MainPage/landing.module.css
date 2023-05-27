@@ -12,6 +12,32 @@
     min-height: 343px;
     background: url("../../img/banner_mobile.svg") no-repeat center;
     background-size: cover;
+    align-items: center;
+}
+.bannerText{
+    font-family: 'Raleway';
+    font-style: italic;
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 75px;
+    margin-top: 70px;
+    text-align: center;
+    text-transform: uppercase;
+
+color: #FFFFFF;
+}
+.bannerTextP{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 33px;
+    text-align: center;
+
+    margin-top: 32px;
+
+    color: #FFFFFF;
+
 }
 @media (min-width: 450px) {
     .banner {
