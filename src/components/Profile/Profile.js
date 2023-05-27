@@ -13,10 +13,9 @@ const Profile = () => {
         const getProd = async () => {
             const p = await ProductService.getAll();
             setProducts(p);
-            console.log(p);
         }
         getProd();
-    }, []);
+    }, [products.length]);
 
     if(store.isAuth) return (
         <div className={styles.container}>
@@ -41,7 +40,7 @@ const Profile = () => {
             </div>
 
             <div className={styles.productsContainer}>
-                <UrProducts/>
+                {products.length > 0 && <UrProducts products={products}/>}
             </div>
         </div>
     );

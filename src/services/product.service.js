@@ -3,7 +3,7 @@ import api from "../api";
 class ProductService {
     async getAll() {
         const res = await api.get('/products/');
-        console.log(res.data);
+        return res.data;
     }
     async getById(id) {
         const res = await api.get(`/products/${id}`);

@@ -1,7 +1,5 @@
 import styles from "./productCard.module.css";
 export const ProductCard = ({product}) => {
-
-
     return (
         <div className={styles.cardContainer}>
             <div className={styles.cardContent}>
