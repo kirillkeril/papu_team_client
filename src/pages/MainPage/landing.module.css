@@ -13,6 +13,7 @@
     background: url("../../img/banner_mobile.svg") no-repeat center;
     background-size: cover;
     align-items: center;
+    border-radius: 10px;
 }
 .bannerText{
     font-family: 'Raleway';
