@@ -24,7 +24,12 @@
     align-items: flex-start;
     justify-content: space-between;
 }
-.links {}
+.links {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 .bottom{
     width: 100%;
 }
@@ -41,4 +46,29 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 22px;
+}
+.email{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 22px;
+    color: #1E1E1E;
+    margin-left: 10px;
+}
+.emailDiv{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.politica{
+    
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 22px;
+
+color: #A9A9A9;
+
 }

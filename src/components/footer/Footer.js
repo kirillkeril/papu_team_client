@@ -6,12 +6,21 @@ export const Footer = () => {
     <footer className={styles.footer}>
       <div className={styles.top}>
         <div>
-          <Image src={"./source/logo.svg"} width={"100%"} />
-          <p>Мы в соц. сетях</p>
-          <nav className={styles.links}>
-            <div>вк</div>
-            <div>телега</div>
-          </nav>
+          <Image src={"./source/logo.svg"} />
+          <p
+            style={{
+              marginTop: "24px",
+              marginBottom: "12px",
+              fontWeight: "bold",
+            }}
+          >
+            Мы в соц. сетях
+          </p>
+          <div className={styles.links}>
+            <Image src={"./source/whats-up.svg"} />
+            <Image src={"./source/vk.svg"} />
+            <Image src={"./source/telega.svg"} />
+          </div>
         </div>
         <div className={styles.column}>
           <span className={styles.spanName}>Каталог</span>
@@ -32,19 +41,24 @@ export const Footer = () => {
         </div>
         <div className={styles.column}>
           <span className={styles.spanName}>Для клиентов</span>
-          <span>Catalog</span>
-          <span>Catalog</span>
-          <span>Catalog</span>
-          <span>Catalog</span>
-          <span>Catalog</span>
+          <span>Доставка</span>
+          <span>Гарантии</span>
+          <span>Оферта</span>
+          <span>Контакты</span>
         </div>
         <div className={styles.column}>
-          <span>Email</span>
-          <span>Catalog</span>
+          <div className={styles.emailDiv}>
+            <Image src={"./source/email-ico.svg"} />
+            <span className={styles.email}>farmpspu@gmail.com</span>
+          </div>
+          <div className={styles.emailDiv}>
+            <Image src={"./source/phone-ico.svg"} />
+            <span className={styles.email}>+7 (800) 567-90-89</span>
+          </div>
         </div>
       </div>
       <div className={styles.bottom}>
-        <div>пролитика конф</div>
+        <div className={styles.politica}>Политика конфиденциальности</div>
       </div>
     </footer>
   );
