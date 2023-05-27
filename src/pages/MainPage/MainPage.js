@@ -34,10 +34,12 @@ export const MainPage = () => {
 
           <div className={styles.ourProductDiv}>
             <div className={styles.headText}>
-              НАШИ ТОВАРЫ
-              <Button onClick={() => navigate("/")} id={"catalog"}>
-                В каталог
-              </Button>
+                <span>НАШИ ТОВАРЫ</span>
+                <div>
+                    <Button onClick={() => navigate("/")} id={"catalog"}>
+                        В каталог
+                    </Button>
+                </div>
             </div>
             <div className={styles.productList}>
               <Image
