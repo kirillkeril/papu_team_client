@@ -2,8 +2,12 @@ import styles from "./fermerCard.module.css";
 import { Header } from "../../components/Header/Header";
 import { useNavigate } from "react-router-dom";
 import { Image } from "../../components/UIKit/Image/Image";
+import {useEffect, useState} from "react";
+import UserService from "../../services/user.service";
 
-export const FermerCard = (props) => {
+export const FermerCard = ({farmer}) => {
+
+
   const navigate = useNavigate();
   return (
     // <div className={styles.cardMainDivPadd}>
@@ -40,27 +44,27 @@ export const FermerCard = (props) => {
     <div className={styles.cardMainDivPadd}>
       <div className={styles.cardMainDivMove}>
         <div className={styles.cardPhoto}>
-          {/* Нужно передать фото */}
-          <Image
-            onClick={() => {
-              navigate("/");
-            }}
-            src={props.photo}
-            width={"143px"}
-          />
+          {/* TODO Нужно передать фото */}
+          {/*<Image*/}
+          {/*  onClick={() => {*/}
+          {/*    navigate("/");*/}
+          {/*  }}*/}
+          {/*  src={farmer.photo}*/}
+          {/*  width={"143px"}*/}
+          {/*/>*/}
         </div>
         <div className={styles.cardInfo}>
-          <div className={styles.infoName}>{props.name}</div>
+          <div className={styles.infoName}>{farmer.name || farmer.email}</div>
           <div className={styles.infoCategories}>
             <span className={styles.categ}>Категории</span>
-            {props.infoCategories}
+            {/*{farmer.infoCategories}*/}
           </div>
-          <div className={styles.infoDescription}>{props.desc}</div>
+          <div className={styles.infoDescription}>farmer.desc</div>
         </div>
         <div className={styles.rightPart}>
           <div className={styles.mark}></div>
           <div className={styles.buttonR}>
-            <button className={styles.bt}></button>
+            <button className={styles.bt}>Перейти</button>
           </div>
         </div>
       </div>
