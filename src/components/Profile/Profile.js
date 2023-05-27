@@ -1,11 +1,23 @@
 import styles from './profile.module.css';
 import {Input} from "../UIKit/Input/Input";
-import {useContext} from "react";
+import {useContext, useEffect, useState} from "react";
 import {Context} from "../../index";
 import {UrProducts} from "../UrProducts/UrProducts";
 import {observer} from "mobx-react-lite";
+import ProductService from "../../services/product.service";
 const Profile = () => {
     const {store} = useContext(Context);
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        const getProd = async () => {
+            const p = await ProductService.getAll();
+            setProducts(p);
+            console.log(p);
+        }
+        getProd();
+    }, []);
+
     if(store.isAuth) return (
         <div className={styles.container}>
             <div className={styles.aboutContainer}>
