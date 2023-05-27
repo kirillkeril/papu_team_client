@@ -3,7 +3,8 @@ import {Input} from "../UIKit/Input/Input";
 import {useContext} from "react";
 import {Context} from "../../index";
 import {UrProducts} from "../UrProducts/UrProducts";
-export const Profile = () => {
+import {observer} from "mobx-react-lite";
+const Profile = () => {
     const {store} = useContext(Context);
     if(store.isAuth) return (
         <div className={styles.container}>
@@ -33,3 +34,5 @@ export const Profile = () => {
         </div>
     );
 }
+
+export default observer(Profile);
