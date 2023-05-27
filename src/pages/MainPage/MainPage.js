@@ -92,7 +92,31 @@ export const MainPage = () => {
             </div>
           </div>
 
-          <div className={styles.productBasket}>
+          <div
+            className={styles.imgPG}
+            style={{
+              backgroundImage: `url(./source/banner2.svg)`,
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+              borderRadius: "10px",
+            }}
+          >
+            <div className={styles.basketDivMain}>
+              <div className={styles.basketText}>ПРОДУКТОВАЯ КОРЗИНА</div>
+              <p className={styles.basketTextP}>
+                Выберите продукты, которые хотели бы видеть себя на столе каждую
+                неделю/месяц/сезон, добавьте их в корзину и оформите подписку на
+                продуктовую корзину. Мы будем доставлять именно эти продукты
+                каждый выбранный вами период
+              </p>
+              <button className={styles.butChooseProduct}>
+                Выбрать товары
+              </button>
+            </div>
+          </div>
+
+          {/* <div className={styles.productBasket}>
             <Image
               src={"./source/banner2.svg"}
               width={"100%"}
@@ -116,7 +140,7 @@ export const MainPage = () => {
                 Выбрать товары
               </button>
             </div>
-          </div>
+          </div> */}
 
           <div className={styles.fermersDiv}>
             <div className={styles.fermersText}>

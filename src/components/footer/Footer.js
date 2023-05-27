@@ -14,24 +14,24 @@ export const Footer = () => {
           </nav>
         </div>
         <div className={styles.column}>
-          <span>Catalog</span>
-          <span>Catalog</span>
-          <span>Catalog</span>
-          <span>Catalog</span>
-          <span>Catalog</span>
-          <span>Catalog</span>
-          <span>Catalog</span>
+          <span className={styles.spanName}>Каталог</span>
+          <span className={styles.spanList}>Мясо и птица</span>
+          <span>Молочные изделия</span>
+          <span>Овощи и фрукты</span>
+          <span>Бакалея</span>
+          <span>Сладости</span>
+          <span>Выпечка</span>
         </div>
         <div className={styles.column}>
-          <span>Catalog</span>
-          <span>Catalog</span>
-          <span>Catalog</span>
-          <span>Catalog</span>
-          <span>Catalog</span>
-          <span>Catalog</span>
+          <span className={styles.spanName}>Навигация</span>
+          <span>Главная</span>
+          <span>Каталог</span>
+          <span>Продуктовая корзина</span>
+          <span>О нас</span>
+          <span>Бонусная программа</span>
         </div>
         <div className={styles.column}>
-          <span>Catalog</span>
+          <span className={styles.spanName}>Для клиентов</span>
           <span>Catalog</span>
           <span>Catalog</span>
           <span>Catalog</span>
